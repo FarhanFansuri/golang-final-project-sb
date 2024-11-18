@@ -1,0 +1,204 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "nama": "Nasi Goreng Spesial",
+      "kategori": "Makanan Utama",
+      "harga": 25000,
+      "tersedia": true,
+      "jumlah_porsi": 20,
+      "gambar": "https://example.com/images/nasi-goreng-spesial.jpg",
+      "deskripsi": "Nasi goreng dengan telur, ayam, dan udang lengkap dengan kerupuk."
+    },
+    {
+      "id": 2,
+      "nama": "Ayam Bakar Madu",
+      "kategori": "Makanan Utama",
+      "harga": 30000,
+      "tersedia": true,
+      "jumlah_porsi": 15,
+      "gambar": "https://example.com/images/ayam-bakar-madu.jpg",
+      "deskripsi": "Ayam bakar dengan olesan madu yang manis dan gurih."
+    },
+    {
+      "id": 3,
+      "nama": "Es Teh Manis",
+      "kategori": "Minuman",
+      "harga": 8000,
+      "tersedia": true,
+      "jumlah_porsi": 50,
+      "gambar": "https://example.com/images/es-teh-manis.jpg",
+      "deskripsi": "Teh manis dingin dengan es batu."
+    },
+    {
+      "id": 4,
+      "nama": "Jus Alpukat",
+      "kategori": "Minuman",
+      "harga": 15000,
+      "tersedia": true,
+      "jumlah_porsi": 30,
+      "gambar": "https://example.com/images/jus-alpukat.jpg",
+      "deskripsi": "Jus alpukat segar dengan susu coklat."
+    },
+    {
+      "id": 5,
+      "nama": "Sup Iga Sapi",
+      "kategori": "Makanan Utama",
+      "harga": 40000,
+      "tersedia": false,
+      "jumlah_porsi": 0,
+      "gambar": "https://example.com/images/sup-iga-sapi.jpg",
+      "deskripsi": "Sup iga sapi dengan kuah rempah yang kaya rasa."
+    },
+    {
+      "id": 6,
+      "nama": "Pisang Goreng Coklat Keju",
+      "kategori": "Camilan",
+      "harga": 18000,
+      "tersedia": true,
+      "jumlah_porsi": 25,
+      "gambar": "https://example.com/images/pisang-goreng-coklat-keju.jpg",
+      "deskripsi": "Pisang goreng renyah dengan topping coklat dan keju parut."
+    },
+    {
+      "id": 7,
+      "nama": "Martabak Telur Mini",
+      "kategori": "Camilan",
+      "harga": 20000,
+      "tersedia": true,
+      "jumlah_porsi": 10,
+      "gambar": "https://example.com/images/martabak-telur-mini.jpg",
+      "deskripsi": "Martabak telur kecil dengan isi daging cincang dan bawang."
+    },
+    {
+      "id": 8,
+      "nama": "Sate Ayam",
+      "kategori": "Makanan Utama",
+      "harga": 25000,
+      "tersedia": true,
+      "jumlah_porsi": 40,
+      "gambar": "https://example.com/images/sate-ayam.jpg",
+      "deskripsi": "Sate ayam dengan bumbu kacang khas Indonesia."
+    },
+    {
+      "id": 9,
+      "nama": "Kopi Tubruk",
+      "kategori": "Minuman",
+      "harga": 12000,
+      "tersedia": true,
+      "jumlah_porsi": 35,
+      "gambar": "https://example.com/images/kopi-tubruk.jpg",
+      "deskripsi": "Kopi hitam tradisional dengan aroma yang khas."
+    },
+    {
+      "id": 10,
+      "nama": "Es Campur",
+      "kategori": "Minuman",
+      "harga": 20000,
+      "tersedia": false,
+      "jumlah_porsi": 0,
+      "gambar": "https://example.com/images/es-campur.jpg",
+      "deskripsi": "Campuran buah-buahan segar, sirup, susu, dan es serut."
+    },
+    {
+      "id": 11,
+      "nama": "Gado-Gado",
+      "kategori": "Makanan Utama",
+      "harga": 22000,
+      "tersedia": true,
+      "jumlah_porsi": 25,
+      "gambar": "https://example.com/images/gado-gado.jpg",
+      "deskripsi": "Salad khas Indonesia dengan bumbu kacang."
+    },
+    {
+      "id": 12,
+      "nama": "Bakso Kuah",
+      "kategori": "Makanan Utama",
+      "harga": 25000,
+      "tersedia": true,
+      "jumlah_porsi": 30,
+      "gambar": "https://example.com/images/bakso-kuah.jpg",
+      "deskripsi": "Bakso daging sapi dalam kuah kaldu yang gurih."
+    },
+    {
+      "id": 13,
+      "nama": "Nasi Uduk",
+      "kategori": "Makanan Utama",
+      "harga": 20000,
+      "tersedia": true,
+      "jumlah_porsi": 20,
+      "gambar": "https://example.com/images/nasi-uduk.jpg",
+      "deskripsi": "Nasi dengan santan, disajikan dengan lauk pauk dan sambal."
+    },
+    {
+      "id": 14,
+      "nama": "Rendang Daging",
+      "kategori": "Makanan Utama",
+      "harga": 35000,
+      "tersedia": true,
+      "jumlah_porsi": 15,
+      "gambar": "https://example.com/images/rendang-daging.jpg",
+      "deskripsi": "Rendang daging sapi dengan bumbu rempah khas Minang."
+    },
+    {
+      "id": 15,
+      "nama": "Soto Ayam",
+      "kategori": "Makanan Utama",
+      "harga": 25000,
+      "tersedia": true,
+      "jumlah_porsi": 20,
+      "gambar": "https://example.com/images/soto-ayam.jpg",
+      "deskripsi": "Soto ayam bening dengan potongan daging ayam dan telur rebus."
+    },
+    {
+      "id": 16,
+      "nama": "Mie Goreng Jawa",
+      "kategori": "Makanan Utama",
+      "harga": 20000,
+      "tersedia": true,
+      "jumlah_porsi": 25,
+      "gambar": "https://example.com/images/mie-goreng-jawa.jpg",
+      "deskripsi": "Mie goreng khas Jawa dengan rasa gurih dan manis."
+    },
+    {
+      "id": 17,
+      "nama": "Nasi Padang",
+      "kategori": "Makanan Utama",
+      "harga": 30000,
+      "tersedia": true,
+      "jumlah_porsi": 20,
+      "gambar": "https://example.com/images/nasi-padang.jpg",
+      "deskripsi": "Nasi dengan berbagai lauk khas Padang."
+    },
+    {
+      "id": 18,
+      "nama": "Ayam Penyet",
+      "kategori": "Makanan Utama",
+      "harga": 25000,
+      "tersedia": true,
+      "jumlah_porsi": 25,
+      "gambar": "https://example.com/images/ayam-penyet.jpg",
+      "deskripsi": "Ayam goreng yang di-penyet dengan sambal terasi."
+    },
+    {
+      "id": 19,
+      "nama": "Es Kelapa Muda",
+      "kategori": "Minuman",
+      "harga": 15000,
+      "tersedia": true,
+      "jumlah_porsi": 40,
+      "gambar": "https://example.com/images/es-kelapa-muda.jpg",
+      "deskripsi": "Es kelapa muda segar dengan gula merah."
+    },
+    {
+      "id": 20,
+      "nama": "Teh Tarik",
+      "kategori": "Minuman",
+      "harga": 12000,
+      "tersedia": true,
+      "jumlah_porsi": 30,
+      "gambar": "https://example.com/images/teh-tarik.jpg",
+      "deskripsi": "Teh tarik hangat dengan rasa khas manis dan lembut."
+    }
+  ]
+}
