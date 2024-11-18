@@ -12,6 +12,7 @@ Restaurant API adalah layanan backend yang dirancang untuk membantu manajemen op
 ### link project
 - PPT : [Canva](https://www.canva.com/design/DAGWzfrL1S8/qvmoevX80Tm09b5e_o_hFw/edit?utm_content=DAGWzfrL1S8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 - API : soon
+- Youtube : soon
 
 ## Fitur Utama
 
