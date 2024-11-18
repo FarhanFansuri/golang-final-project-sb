@@ -9,6 +9,8 @@ Bootcamp ini berfokus pada pengembangan backend dengan menggunakan bahasa pemrog
 ## Final Project (Restaurant API)
 
 Restaurant API adalah layanan backend yang dirancang untuk membantu manajemen operasional restoran, seperti mengelola menu, pesanan, reservasi meja, dan pembayaran.
+### link project
+- PPT : https://www.canva.com/design/DAGWzfrL1S8/qvmoevX80Tm09b5e_o_hFw/edit?utm_content=DAGWzfrL1S8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton 
 
 ## Fitur Utama
 
