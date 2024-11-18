@@ -40,6 +40,7 @@ Restaurant API adalah layanan backend yang dirancang untuk membantu manajemen op
 
 ---
 ## struktur folder
+berikut adalah struktur folder yang saya gunakan
 ```
 restaurant-api/
 ├── controllers/ # Logika endpoint
