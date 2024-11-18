@@ -39,3 +39,5 @@ Restaurant API adalah layanan backend yang dirancang untuk membantu manajemen op
   - Akses fitur sesuai peran pengguna (admin/pelanggan).
 
 ---
+## struktur folder
+restaurant-api/ ├── controllers/ # Logika endpoint ├── models/ # Definisi model data ├── routes/ # Routing API ├── services/ # Logika bisnis ├── middleware/ # Middleware seperti autentikasi ├── database/ # Konfigurasi database └── main.go # Entry point aplikasi
