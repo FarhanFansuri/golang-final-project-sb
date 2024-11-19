@@ -6,36 +6,75 @@ Selamat datang di repository saya! Ini adalah proyek akhir yang saya kerjakan se
 
 Bootcamp ini berfokus pada pengembangan backend dengan menggunakan bahasa pemrograman **Golang**. Materi yang dipelajari mencakup konsep-konsep dasar Golang, pengembangan API, pengelolaan database, praktik pengujian, serta penerapan prinsip-prinsip RESTful.
 
-## Final Project (Restaurant API)
+## Final Project (Dompetku API)
 
-Restaurant API adalah layanan backend yang dirancang untuk membantu manajemen operasional restoran, seperti mengelola menu, pesanan, reservasi meja, dan pembayaran.
+**Dompetku** adalah aplikasi API manajemen keuangan pribadi yang dirancang untuk membantu pengguna melacak dan mengelola pendapatan serta pengeluaran mereka dengan mudah dan efisien. Dengan Dompetku, pengguna dapat memperoleh wawasan tentang kebiasaan finansial mereka, mengatur anggaran, dan membuat keputusan keuangan yang lebih baik.
+
 ### link project
 - PPT : [Canva](https://www.canva.com/design/DAGWzfrL1S8/qvmoevX80Tm09b5e_o_hFw/edit?utm_content=DAGWzfrL1S8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 - API : [Railway]()
 - Youtube : [Presentasi]()
 
-## Fitur Utama
 
-- **Manajemen Menu**  
-  - CRUD (Create, Read, Update, Delete) menu makanan dan minuman.  
-  - Kategori menu (makanan pembuka, utama, penutup).  
-  - Informasi harga dan ketersediaan.
+## 📋 Fitur Utama
 
-- **Manajemen Pesanan**  
-  - Membuat pesanan baru.  
-  - Mengupdate status pesanan (diproses, selesai, dibatalkan).  
-  - Melihat riwayat pesanan pelanggan.
+### 1. Manajemen Transaksi (Pendapatan & Pengeluaran)
 
-- **Manajemen Meja**  
-  - Melihat daftar meja yang tersedia.  
-  - Reservasi meja oleh pelanggan.
+Dompetku memungkinkan pengguna untuk mencatat setiap transaksi keuangan mereka, baik itu pendapatan maupun pengeluaran, dengan detail yang lengkap. Fitur ini mencakup:
 
-- **Manajemen Pembayaran**  
-  - Mendukung berbagai metode pembayaran (tunai/kartu/digital).  
-  - Melihat status pembayaran pesanan.
+- **Pencatatan Transaksi:** Pengguna dapat menambahkan transaksi baru dengan informasi seperti jumlah, jenis (pendapatan atau pengeluaran), kategori, deskripsi, dan tanggal.
+- **Klasifikasi Kategori:** Transaksi dapat dikategorikan ke dalam berbagai kategori seperti makanan, transportasi, hiburan, dan lainnya untuk memudahkan analisis.
+- **CRUD Transaksi:** Pengguna dapat melakukan operasi Create, Read, Update, dan Delete (CRUD) pada transaksi mereka, memastikan data keuangan selalu terbarui dan akurat.
 
-- **Authentication & Authorization**  
-  - Sistem login untuk admin restoran.  
-  - Akses fitur sesuai peran pengguna (admin/pelanggan).
+**Contoh Payload untuk Menambahkan Transaksi:**
+```json
+{
+    "amount": 100000,
+    "type": "expense",
+    "category": "food",
+    "description": "Dinner at restaurant"
+}
+```
+
+### 2. Laporan Keuangan Harian/Mingguan/Bulanan
+
+Fitur ini menyediakan ringkasan otomatis dari transaksi pengguna dalam periode tertentu, membantu mereka memahami pola keuangan mereka. Beberapa manfaat utama dari fitur ini meliputi:
+
+- **Ringkasan Keuangan:** Menampilkan total pendapatan, pengeluaran, dan saldo saat ini.
+- **Analisis Kategori:** Menunjukkan kategori pengeluaran terbesar, sehingga pengguna dapat melihat area mana yang paling banyak menghabiskan uang.
+- **Visualisasi Data:** Menyajikan data dalam format yang mudah dipahami, seperti grafik atau tabel, untuk memudahkan interpretasi.
+
+**Contoh Response Laporan Bulanan:**
+```json
+{
+    "total_income": 5000000,
+    "total_expense": 3500000,
+    "balance": 1500000,
+    "top_categories": [
+        { "category": "food", "amount": 2000000 },
+        { "category": "transport", "amount": 1000000 }
+    ]
+}
+```
+
+### 3. Keamanan Akun dan Data
+
+Keamanan adalah prioritas utama dalam Dompetku. Aplikasi ini memastikan bahwa data pengguna terlindungi dengan standar keamanan yang tinggi melalui:
+
+- **Autentikasi Berbasis JWT:** Menggunakan JSON Web Tokens (JWT) untuk autentikasi pengguna, memastikan bahwa hanya pengguna yang berwenang yang dapat mengakses data mereka.
+- **Enkripsi Password:** Password pengguna disimpan dalam bentuk terenkripsi menggunakan bcrypt, menjaga kerahasiaan informasi login.
+- **Akses Terbatas:** Setiap pengguna hanya dapat mengakses data mereka sendiri, mencegah akses tidak sah ke informasi finansial pribadi.
 
 ---
+## struktur folder
+berikut adalah struktur folder yang saya gunakan
+```
+restaurant-api/
+├── controllers/ # Logika endpoint
+├── models/ # Definisi model data
+├── routes/ # Routing API
+├── services/ # Logika bisnis
+├── middleware/ # Middleware seperti autentikasi
+├── database/ # Konfigurasi database
+└── main.go # Entry point aplikasi
+```
