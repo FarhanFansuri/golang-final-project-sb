@@ -11,7 +11,7 @@ Bootcamp ini berfokus pada pengembangan backend dengan menggunakan bahasa pemrog
 **Dompetku** adalah aplikasi API manajemen keuangan pribadi yang dirancang untuk membantu pengguna melacak dan mengelola pendapatan serta pengeluaran mereka dengan mudah dan efisien. Dengan Dompetku, pengguna dapat memperoleh wawasan tentang kebiasaan finansial mereka, mengatur anggaran, dan membuat keputusan keuangan yang lebih baik.
 
 ### link project
-- PPT : [Canva](https://www.canva.com/design/DAGWzfrL1S8/qvmoevX80Tm09b5e_o_hFw/edit?utm_content=DAGWzfrL1S8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+- PPT : [Canva](https://www.canva.com/design/DAGW7EPTsCU/QY6SAmKUiqZta59tuwoRRg/edit?utm_content=DAGW7EPTsCU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 - API : [Railway]()
 - Youtube : [Presentasi]()
 
@@ -73,8 +73,6 @@ restaurant-api/
 ├── controllers/ # Logika endpoint
 ├── models/ # Definisi model data
 ├── routes/ # Routing API
-├── services/ # Logika bisnis
 ├── middleware/ # Middleware seperti autentikasi
-├── database/ # Konfigurasi database
 └── main.go # Entry point aplikasi
 ```
