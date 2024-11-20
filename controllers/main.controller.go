@@ -13,7 +13,79 @@ var DB *gorm.DB
 
 func Home(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{
-		"message": "Hello Home",
+		"message": "Info Endpoint",
+		"Endpoints": []gin.H{
+			{
+				"method":      "GET",
+				"url":         "/users",
+				"description": "Mendapatkan semua pengguna",
+				"contohInput": nil,
+			},
+			{
+				"method":      "POST",
+				"url":         "/users",
+				"description": "Membuat pengguna baru",
+				"contohInput": gin.H{
+					"Username": "johndoe",
+					"Email":    "johndoe@example.com",
+					"Password": "kataSandiRahasia123",
+				},
+			},
+			{
+				"method":      "PUT",
+				"url":         "/users/:id",
+				"description": "Memperbarui pengguna berdasarkan ID",
+				"contohInput": gin.H{
+					"Username": "john_doe_diperbarui",
+					"Email":    "john_diperbarui@example.com",
+					"Password": "kataSandiBaru456",
+				},
+			},
+			{
+				"method":      "DELETE",
+				"url":         "/users/:id",
+				"description": "Menghapus pengguna berdasarkan ID",
+				"contohInput": nil,
+			},
+			{
+				"method":      "GET",
+				"url":         "/transactions",
+				"description": "Mendapatkan semua transaksi",
+				"contohInput": nil,
+			},
+			{
+				"method":      "POST",
+				"url":         "/transactions",
+				"description": "Membuat transaksi baru",
+				"contohInput": gin.H{
+					"UserID":       1,
+					"Amount":       500000,
+					"Type":         "Pengeluaran",
+					"Category":     "Makanan",
+					"Descriptions": "Makan siang di restoran (Optional)",
+					"Date":         "2024-11-20T10:00:00Z",
+				},
+			},
+			{
+				"method":      "PUT",
+				"url":         "/transactions/:id",
+				"description": "Memperbarui transaksi berdasarkan ID",
+				"contohInput": gin.H{
+					"UserID":       1,
+					"Amount":       450000,
+					"Type":         "Pengeluaran",
+					"Category":     "Makanan",
+					"Descriptions": "Pengeluaran makan siang diperbarui (Optional)",
+					"Date":         "2024-11-20T12:00:00Z",
+				},
+			},
+			{
+				"method":      "DELETE",
+				"url":         "/transactions/:id",
+				"description": "Menghapus transaksi berdasarkan ID",
+				"contohInput": nil,
+			},
+		},
 	})
 }
 

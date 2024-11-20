@@ -18,6 +18,7 @@ var err error
 
 func InitDB() {
 	dsn, err := dburl.Parse("mysql://root:mOyIqTnSyxfccpttFWWWUeCFWKLgzsiw@autorack.proxy.rlwy.net:49673/railway") // sesuaikan dengan database kamu
+	
 	if err != nil {
 		fmt.Println(err)
 		return
