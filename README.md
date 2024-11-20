@@ -1,4 +1,4 @@
-# <a href="https://golang.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg" alt="go" width="40" height="40"/> </a> Golang - Backend Development Bootcamp (Batch 61) 
+# <a href="https://golang.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg" alt="go" width="40" height="40"/> </a> Golang - Final Project Bootcamp SB (Batch 61) 
 
 Selamat datang di repository saya! Ini adalah proyek akhir yang saya kerjakan selama mengikuti bootcamp **"Golang - Backend Development"** (Batch 61) yang diselenggarakan oleh [Sanbercode](https://sanbercode.com).
 
