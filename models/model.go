@@ -19,10 +19,10 @@ package models
 // }
 
 type User struct {
-	UserID   uint   `gorm:"primaryKey"`
-	Username string `gorm:"type:varchar(255);not null"`
-	Email    string `gorm:"type:varchar(255);not null;unique"` // Email dibuat unik
-	Password string `gorm:"type:varchar(255);not null"`
+	UserID   uint   `json:"userid"`
+	Username string `json:"username"`
+	Email    string `json:"email"` // Email dibuat unik
+	Password string `json:"password"`
 	// Bisa NULL
 }
 
