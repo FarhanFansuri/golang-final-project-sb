@@ -5,7 +5,6 @@ import (
 	"final_api/routes"
 	"fmt"
 	"log"
-	"os"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
@@ -41,5 +40,5 @@ func main() {
 	}
 	server := gin.Default()
 	routes.Router(server)
-	server.Run(os.Getenv("PORT"))
+	server.Run(":8080")
 }
