@@ -48,6 +48,7 @@ func FilterTransactionsByDate(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{"transactions": transactions})
 }
 
+// Home akan mengembalikan informasi dasar tentang endpoint dan filter transaksi
 func Home(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{
 		"message": "Info Endpoint",
@@ -87,8 +88,13 @@ func Home(ctx *gin.Context) {
 			{
 				"method":      "GET",
 				"url":         "/transactions",
-				"description": "Mendapatkan semua transaksi",
-				"contohInput": nil,
+				"description": "Mendapatkan semua transaksi berdasarkan filter",
+				"contohInput": gin.H{
+					"category":  "Makanan",     // Filter berdasarkan kategori
+					"type":      "Pengeluaran", // Filter berdasarkan tipe transaksi
+					"minAmount": 100000,        // Filter berdasarkan jumlah minimum
+					"maxAmount": 1000000,       // Filter berdasarkan jumlah maksimum
+				},
 			},
 			{
 				"method":      "POST",
