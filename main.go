@@ -9,6 +9,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
+	"github.com/xo/dburl"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -16,15 +17,15 @@ import (
 var err error
 
 func InitDB() {
-	// dsn, err := dburl.Parse("mysql://root:mOyIqTnSyxfccpttFWWWUeCFWKLgzsiw@autorack.proxy.rlwy.net:49673/railway") // sesuaikan dengan database kamu
+	dsn, err := dburl.Parse("mysql://root:mOyIqTnSyxfccpttFWWWUeCFWKLgzsiw@autorack.proxy.rlwy.net:49673/railway") // sesuaikan dengan database kamu
 
-	// if err != nil {
-	// 	fmt.Println(err)
-	// 	return
-	// }
-	// database.DB, err = gorm.Open(mysql.Open(dsn.DSN), &gorm.Config{})
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	database.DB, err = gorm.Open(mysql.Open(dsn.DSN), &gorm.Config{})
 
-	dsn := "root:@tcp(localhost:3306)/test" // sesuaikan dengan database kamu
+	// dsn := "root:@tcp(localhost:3306)/test" // sesuaikan dengan database kamu
 
 	// if err != nil {
 	// 	fmt.Println(err)
