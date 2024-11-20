@@ -13,7 +13,7 @@ Bootcamp ini berfokus pada pengembangan backend dengan menggunakan bahasa pemrog
 ### link project
 - PPT : [Canva](https://www.canva.com/design/DAGW7EPTsCU/QY6SAmKUiqZta59tuwoRRg/edit?utm_content=DAGW7EPTsCU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 - API : [Railway](https://golang-final-project-sb-production.up.railway.app/)
-- Youtube : [Presentasi]()
+- Youtube : [Presentasi](https://youtu.be/oNCPtTnBX6w)
 
 
 ## 📋 Fitur Utama
