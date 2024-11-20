@@ -4,9 +4,49 @@ import (
 	"final_api/database"
 	"final_api/models" // Gantilah dengan path yang sesuai untuk model Anda
 	"net/http"
+	"time"
 
 	"github.com/gin-gonic/gin"
 )
+
+// FilterTransactionsByDate untuk memfilter transaksi berdasarkan bulan atau hari
+func FilterTransactionsByDate(ctx *gin.Context) {
+	var transactions []models.Transaction
+	dateFilter := ctx.Query("date") // Ambil filter tanggal dari query parameter
+
+	if dateFilter == "" {
+		ctx.JSON(http.StatusBadRequest, gin.H{"error": "Date parameter is required"})
+		return
+	}
+
+	// Parse tanggal dari parameter
+	parsedDate, err := time.Parse("2006-01-02", dateFilter)
+	if err != nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{"error": "Invalid date format. Use YYYY-MM-DD"})
+		return
+	}
+
+	// Filter berdasarkan bulan jika hanya bulan dan tahun yang diberikan
+	month := ctx.Query("month")
+	if month != "" {
+		if err := database.DB.Where("MONTH(date) = ? AND YEAR(date) = ?", parsedDate.Month(), parsedDate.Year()).
+			Find(&transactions).Error; err != nil {
+			ctx.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to fetch transactions"})
+			return
+		}
+		ctx.JSON(http.StatusOK, gin.H{"transactions": transactions})
+		return
+	}
+
+	// Filter berdasarkan hari jika tanggal lengkap diberikan
+	if err := database.DB.Where("DATE(date) = ?", parsedDate).
+		Find(&transactions).Error; err != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to fetch transactions"})
+		return
+	}
+
+	ctx.JSON(http.StatusOK, gin.H{"transactions": transactions})
+}
 
 func Home(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{
@@ -99,10 +139,43 @@ func GetUsers(ctx *gin.Context) {
 // GetTransactions akan mengembalikan daftar semua transaksi
 func GetTransactions(ctx *gin.Context) {
 	var transactions []models.Transaction
-	if err := database.DB.Find(&transactions).Error; err != nil {
-		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to fetch transactions"})
+
+	// Mengambil parameter filter dari query string
+	category := ctx.DefaultQuery("category", "")          // Filter berdasarkan kategori (default: kosong)
+	transactionType := ctx.DefaultQuery("type", "")       // Filter berdasarkan tipe (default: kosong)
+	minAmount := ctx.DefaultQuery("minAmount", "0")       // Filter berdasarkan jumlah minimum (default: 0)
+	maxAmount := ctx.DefaultQuery("maxAmount", "1000000") // Filter berdasarkan jumlah maksimum (default: 1 juta)
+
+	// Membuat query GORM untuk transaksi
+	query := database.DB.Model(&models.Transaction{})
+
+	// Menambahkan filter berdasarkan kategori jika ada
+	if category != "" {
+		query = query.Where("category = ?", category)
+	}
+
+	// Menambahkan filter berdasarkan tipe jika ada
+	if transactionType != "" {
+		query = query.Where("type = ?", transactionType)
+	}
+
+	// Menambahkan filter berdasarkan jumlah minimum jika ada
+	if minAmount != "" {
+		query = query.Where("amount >= ?", minAmount)
+	}
+
+	// Menambahkan filter berdasarkan jumlah maksimum jika ada
+	if maxAmount != "" {
+		query = query.Where("amount <= ?", maxAmount)
+	}
+
+	// Menjalankan query untuk mengambil transaksi yang sesuai dengan filter
+	if err := query.Find(&transactions).Error; err != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get transactions"})
 		return
 	}
+
+	// Mengembalikan hasil transaksi yang sudah difilter
 	ctx.JSON(http.StatusOK, gin.H{"transactions": transactions})
 }
 

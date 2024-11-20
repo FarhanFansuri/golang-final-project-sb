@@ -26,12 +26,22 @@ type User struct {
 	// Bisa NULL
 }
 
+// type Transaction struct {
+// 	TransactionID uint    `gorm:"primaryKey"`
+// 	UserID        uint    `gorm:"not null;index"` // Kolom biasa tanpa foreign key
+// 	Amount        int     `gorm:"not null"`
+// 	Type          string  `gorm:"type:varchar(100);not null"`
+// 	Category      string  `gorm:"type:varchar(100);not null"`
+// 	Descriptions  string  `gorm:"type:varchar(255);not null"`
+// 	Date          []uint8 `gorm:"not null"`
+// }
+
 type Transaction struct {
-	TransactionID uint    `gorm:"primaryKey"`
-	UserID        uint    `gorm:"not null;index"` // Kolom biasa tanpa foreign key
-	Amount        int     `gorm:"not null"`
-	Type          string  `gorm:"type:varchar(100);not null"`
-	Category      string  `gorm:"type:varchar(100);not null"`
-	Descriptions  string  `gorm:"type:varchar(255);not null"`
-	Date          []uint8 `gorm:"not null"`
+	ID           uint    `json:"id"`
+	UserID       uint    `json:"UserID"`
+	Amount       float64 `json:"Amount"`
+	Type         string  `json:"Type"`
+	Category     string  `json:"Category"`
+	Descriptions string  `json:"Descriptions"`
+	Date         string  `json:"Date"`
 }

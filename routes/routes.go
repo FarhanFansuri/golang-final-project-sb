@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"final_api/controllers" // Gantilah dengan path yang sesuai untuk controller Anda
+	"final_api/controllers"
 
 	"github.com/gin-gonic/gin"
 )
@@ -18,7 +18,7 @@ func Router(server *gin.Engine) {
 	server.DELETE("/users/:id", controllers.DeleteUser) // Menghapus pengguna berdasarkan ID
 
 	// Rute untuk Transactions
-	server.GET("/transactions", controllers.GetTransactions)          // Mendapatkan semua transaksi
+	server.GET("/transactions", controllers.GetTransactions)          // Mendapatkan semua transaksi dengan filter
 	server.POST("/transactions", controllers.CreateTransaction)       // Membuat transaksi baru
 	server.PUT("/transactions/:id", controllers.UpdateTransaction)    // Memperbarui transaksi berdasarkan ID
 	server.DELETE("/transactions/:id", controllers.DeleteTransaction) // Menghapus transaksi berdasarkan ID
