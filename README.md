@@ -36,28 +36,7 @@ Dompetku memungkinkan pengguna untuk mencatat setiap transaksi keuangan mereka, 
 }
 ```
 
-### 2. Laporan Keuangan Harian/Mingguan/Bulanan
-
-Fitur ini menyediakan ringkasan otomatis dari transaksi pengguna dalam periode tertentu, membantu mereka memahami pola keuangan mereka. Beberapa manfaat utama dari fitur ini meliputi:
-
-- **Ringkasan Keuangan:** Menampilkan total pendapatan, pengeluaran, dan saldo saat ini.
-- **Analisis Kategori:** Menunjukkan kategori pengeluaran terbesar, sehingga pengguna dapat melihat area mana yang paling banyak menghabiskan uang.
-- **Visualisasi Data:** Menyajikan data dalam format yang mudah dipahami, seperti grafik atau tabel, untuk memudahkan interpretasi.
-
-**Contoh Response Laporan Bulanan:**
-```json
-{
-    "total_income": 5000000,
-    "total_expense": 3500000,
-    "balance": 1500000,
-    "top_categories": [
-        { "category": "food", "amount": 2000000 },
-        { "category": "transport", "amount": 1000000 }
-    ]
-}
-```
-
-### 3. Keamanan Akun dan Data
+### 2. Keamanan Akun dan Data
 
 Keamanan adalah prioritas utama dalam Dompetku. Aplikasi ini memastikan bahwa data pengguna terlindungi dengan standar keamanan yang tinggi melalui:
 
