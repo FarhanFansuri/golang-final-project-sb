@@ -13,6 +13,7 @@ func Router(server *gin.Engine) {
 	// Rute untuk Users
 	server.GET("/users", controllers.GetUsers)          // Mendapatkan semua pengguna
 	server.POST("/users", controllers.SignUp)           // Membuat pengguna baru
+	server.POST("/users/login", controllers.Login)      // login
 	server.PUT("/users/:id", controllers.UpdateUser)    // Memperbarui pengguna berdasarkan ID
 	server.DELETE("/users/:id", controllers.DeleteUser) // Menghapus pengguna berdasarkan ID
 
