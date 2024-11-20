@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
 )
 
@@ -110,7 +111,7 @@ func GetTransactions(ctx *gin.Context) {
 }
 
 // CreateUser untuk menambahkan user baru
-func CreateUser(ctx *gin.Context) {
+func SignUp(ctx *gin.Context) {
 	var user models.User
 	if err := ctx.ShouldBindJSON(&user); err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{"error": "Invalid data"})
@@ -121,6 +122,40 @@ func CreateUser(ctx *gin.Context) {
 		return
 	}
 	ctx.JSON(http.StatusCreated, gin.H{"message": "User created successfully", "user": user})
+}
+
+// Login untuk autentikasi pengguna
+func Login(ctx *gin.Context) {
+	var input struct {
+		Username string `json:"Username" binding:"required"`
+		Password string `json:"Password" binding:"required"`
+	}
+
+	// Bind JSON dari request ke struct input
+	if err := ctx.ShouldBindJSON(&input); err != nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{"error": "Invalid input"})
+		return
+	}
+
+	var user models.User
+	// Cari user berdasarkan username
+	if err := DB.Where("username = ?", input.Username).First(&user).Error; err != nil {
+		ctx.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid username or password"})
+		return
+	}
+
+	// Verifikasi password (anggap password di-hash menggunakan bcrypt)
+	if err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(input.Password)); err != nil {
+		ctx.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid username or password"})
+		return
+	}
+
+	// Login berhasil
+	ctx.JSON(http.StatusOK, gin.H{"message": "Login successful", "user": gin.H{
+		"id":       user.UserID,
+		"username": user.Username,
+		"email":    user.Email,
+	}})
 }
 
 // CreateTransaction untuk menambahkan transaksi baru
